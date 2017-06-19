@@ -9,6 +9,10 @@ Install package in your project:
 ```
 yarn add -D git+ssh://git@bitbucket.org/argussecurity/eslint-config-argus.git#X.X.X
 ```
+or
+```
+napm install --save-dev git+ssh://git@bitbucket.org/argussecurity/eslint-config-argus.git#X.X.X
+```
 (where `X.X.X` is desired version)
 
 Create `.eslintrc`:
