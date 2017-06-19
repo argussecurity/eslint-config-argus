@@ -26,7 +26,7 @@ module.exports = {
         ],
         // return should be without assign action,
         // but it's not good in cases like the following one:
-        // setProperty = (newValue) => property = newValue;
+        // setProperty = (newValue) => property = neslint-plugin-reactewValue;
         "no-return-assign": 0,
         // Max line length
         "max-len": [
@@ -168,6 +168,12 @@ module.exports = {
         "no-plusplus": 0,
         // We're using sagas, therefore we will use infinite loops like `while(true) {}`
         "no-constant-condition": 0,
+        // Some methods of react components can be used without `this`
+        // For exampe:
+        // * I just want to manipulate values that they use.
+        // * Method is rendering part of DOM of the component
+        // * render() returning `null` in case I don't want component to have visual part (Controllers)
+        "class-methods-use-this": 0,
 
         /*---# PLUGINS ---*/
 
@@ -176,6 +182,43 @@ module.exports = {
         "import/no-extraneous-dependencies": 0,
         "import/prefer-default-export": [
             "warn"
-        ]
+        ],
+
+        /*---# REACT ---*/
+
+        "react/jsx-indent-props": 0,
+        "react/jsx-first-prop-new-line": 0,
+        "react/jsx-closing-bracket-location": 0,
+        "react/prefer-stateless-function": 0,
+        "react/no-did-mount-set-state": 0,
+        "react/jsx-pascal-case": 0,
+        "react/jsx-no-bind": 0,
+        "react/require-default-props": ["warn"],
+        // It's wrong to use pure index as key, but it's okey to wrap it in unique string
+        // `unique-key-${key}`
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+        "react/no-array-index-key": ["warn"],
+        // Requiring of images and styles
+        "import/no-unresolved": 0,
+        // In redux we have following pattern:
+        // export default connect()(Component);
+        // And this property will trigger error
+        "import/no-named-as-default": 0,
+        "react/prop-types": 0,
+        // For now this property is not usefull
+        // It can't really determine which property is used and which is not
+        "react/no-unused-prop-types": ["warn"],
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        // I don't see problem with using `onClick` on `div` elements
+        // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/no-noninteractive-element-interactions": 0,
+        "jsx-quotes": [
+            "error",
+            "prefer-single"
+        ],
     }
 };
