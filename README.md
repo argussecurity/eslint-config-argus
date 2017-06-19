@@ -7,7 +7,7 @@ Configs based on [eslint-config-airbnb](https://www.npmjs.com/package/eslint-con
 Install package in your project:
 
 ```
-yarn add -D git+https://artem-argus@bitbucket.org/argussecurity/eslint-config-argus.git#X.X.X
+yarn add -D git+ssh://git@bitbucket.org/argussecurity/eslint-config-argus.git#X.X.X
 ```
 (where `X.X.X` is desired version)
 
