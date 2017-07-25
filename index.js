@@ -174,6 +174,10 @@ module.exports = {
         // * Method is rendering part of DOM of the component
         // * render() returning `null` in case I don't want component to have visual part (Controllers)
         "class-methods-use-this": 0,
+        // Dangle comma in functions cause error in ES6.
+        "comma-dangle": ["error", {
+            "functions": "ignore"
+        }],
 
         /*---# PLUGINS ---*/
 
