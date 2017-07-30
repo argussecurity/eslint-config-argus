@@ -176,6 +176,10 @@ module.exports = {
         "class-methods-use-this": 0,
         // Dangle comma in functions cause error in ES6.
         "comma-dangle": ["error", {
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
             "functions": "ignore"
         }],
 
