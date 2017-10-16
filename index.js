@@ -182,6 +182,10 @@ module.exports = {
             "exports": "always-multiline",
             "functions": "ignore"
         }],
+        // Usage of `Math.pow` will not emit error (** operator is not available in es6)
+        "no-restricted-properties": [
+            "warn",
+        ],
 
         /*---# PLUGINS ---*/
 
