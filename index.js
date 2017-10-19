@@ -186,6 +186,46 @@ module.exports = {
         "no-restricted-properties": [
             "warn",
         ],
+        // We're allowing multiple spaces before comments.
+        // This way you can align comment in one column
+        // For example:
+        // const foo = 1;          // explanation
+        // const someLongName = 2; // some additional explanation
+        "no-multi-spaces": [
+            "error",
+            {
+                "ignoreEOLComments": true
+            }
+        ],
+        // Arguments could be passed to the function in multiple lines.
+        // For example:
+        // foo(
+        //    bar,
+        //    baz,
+        //    qux
+        // );
+        "function-paren-newline": ["error", "consistent"],
+        // Some global variables should be restricted
+        // Global variable "event" should not be used
+        // "fdescribe" is part of testing framework
+        // "fit" is part of testing framework as well
+        "no-restricted-globals": [
+            "error",
+            {
+                "name": "event",
+                "message": "Use local parameter instead."
+            },
+            {
+                "name": "fdescribe",
+                "message": "Do not commit 'fdescribe'. Use describe instead."
+            },
+            {
+                "name": "fit",
+                "message": "Do not commit 'fit'. Use describe instead."
+            }
+        ],
+        // Objects can be created in one line
+        "object-curly-newline": ["error", { "consistent": true }],
 
         /*---# PLUGINS ---*/
 
@@ -232,5 +272,14 @@ module.exports = {
             "error",
             "prefer-single"
         ],
+        // We allowing to use "onClick" events on various elements
+        // like "div", "span", etc
+        "jsx-a11y/click-events-have-key-events": ["warn"],
+        // Check valid "href" attributes on "a" tag.
+        // But do not use it in "Link" components.
+        "jsx-a11y/anchor-is-valid": [ "error", {
+            "specialLink": [ "hrefLeft", "hrefRight" ],
+            "aspects": [ "noHref", "invalidHref", "preferButton" ]
+        }]
     }
 };
