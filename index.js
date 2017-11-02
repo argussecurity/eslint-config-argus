@@ -226,6 +226,12 @@ module.exports = {
         ],
         // Objects can be created in one line
         "object-curly-newline": ["error", { "consistent": true }],
+        // We don't force to use object destructuring
+        // Following form still looks better
+        // ``` const length = someArray.length; ```
+        // then this one:
+        // ``` const { length } = someArray; ```
+        "prefer-destructuring": ["warn"],
 
         /*---# PLUGINS ---*/
 
