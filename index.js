@@ -286,6 +286,9 @@ module.exports = {
         "jsx-a11y/anchor-is-valid": [ "error", {
             "specialLink": [ "hrefLeft", "hrefRight" ],
             "aspects": [ "noHref", "invalidHref", "preferButton" ]
-        }]
+        }],
+        // "onMouseOut must be accompanied by onBlur for accessibilitiy"
+        // not an error, just warning
+        "jsx-a11y/mouse-events-have-key-events": ["warn"]
     }
 };
