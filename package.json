@@ -11,7 +11,6 @@
     "url": "git+ssh://git@bitbucket.org/argussecurity/eslint-config-argus.git"
   },
   "author": "",
-  "license": "MIT",
   "homepage": "https://bitbucket.org/argussecurity/eslint-config-argus#readme",
   "dependencies": {
     "babel-eslint": "^8.0.1",
