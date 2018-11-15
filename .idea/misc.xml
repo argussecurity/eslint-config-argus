@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../argus-backend/idps-translator" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../argus-backend/query-service" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../argus-backend/sample-service" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../argus-backend/vehicle-service" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+</project>

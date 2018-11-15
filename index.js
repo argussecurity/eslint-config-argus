@@ -235,14 +235,7 @@ module.exports = {
 
         /*---# PLUGINS ---*/
 
-        // You can import devDependencies, as well as dependencies, there is no problems with it
-        // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-        "import/no-extraneous-dependencies": 0,
-        "import/prefer-default-export": [
-            "warn"
-        ],
-
-        /*---# REACT ---*/
+        /*---## react ---*/
 
         "react/jsx-indent-props": 0,
         "react/jsx-first-prop-new-line": 0,
@@ -256,12 +249,6 @@ module.exports = {
         // `unique-key-${key}`
         // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
         "react/no-array-index-key": ["warn"],
-        // Requiring of images and styles
-        "import/no-unresolved": 0,
-        // In redux we have following pattern:
-        // export default connect()(Component);
-        // And this property will trigger error
-        "import/no-named-as-default": 0,
         "react/prop-types": 0,
         // For now this property is not usefull
         // It can't really determine which property is used and which is not
@@ -270,6 +257,35 @@ module.exports = {
             "error",
             4
         ],
+        // It's not always more readable - to write one exception per line
+        // But it should be something that is nice to have in general
+        "react/jsx-one-expression-per-line": ["warn"],
+        // I disagree that we should enforce destructuring of `this.state` or `this.props`
+        "react/destructuring-assignment": [0],
+        // It's no always error,
+        // but it's good to have warning about accessing state and setting it in the same function
+        "react/no-access-state-in-setstate": ["warn"],
+        // I want to be able to write render function outside of the class and the use them inside with `bind()`
+        // In this case I will use `this` inside such function.
+        "react/no-this-in-sfc": ["warn"],
+
+        /*---## import ---*/
+
+        // Requiring of images and styles
+        "import/no-unresolved": 0,
+        // In redux we have following pattern:
+        // export default connect()(Component);
+        // And this property will trigger error
+        "import/no-named-as-default": 0,
+        // You can import devDependencies, as well as dependencies, there is no problems with it
+        // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
+        "import/no-extraneous-dependencies": 0,
+        "import/prefer-default-export": [
+            "warn"
+        ],
+
+        /*---## jsx-a11y ---*/
+
         // I don't see problem with using `onClick` on `div` elements
         // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md
         "jsx-a11y/no-static-element-interactions": 0,
@@ -287,8 +303,8 @@ module.exports = {
             "specialLink": [ "hrefLeft", "hrefRight" ],
             "aspects": [ "noHref", "invalidHref", "preferButton" ]
         }],
-        // "onMouseOut must be accompanied by onBlur for accessibilitiy"
+        // "onMouseOut must be accompanied by onBlur for accessibility"
         // not an error, just warning
-        "jsx-a11y/mouse-events-have-key-events": ["warn"]
+        "jsx-a11y/mouse-events-have-key-events": ["warn"],
     }
 };
